@@ -1,0 +1,24 @@
+<div class="container  d-flex justify-content-center" >
+    <input type="text" class="form-control w-75" placeholder="Search" >
+</div>
+
+<div class="row g-5 container m-auto">
+    <div class="col-md-3 whenhover rounded-2 py-3" *ngFor="let product of products">
+        <a href="" [routerLink]="['/productdetails',product._id]">
+<img [src]="product.imageCover" alt="" class="w-100" >
+<h5 class="maincolor">{{product.category.name}}</h5>
+<p class=" fw-bold">{{product.title.split(' ').slice(0,2).join(' ')}}</p>
+<div class="d-flex justify-content-between">
+<p>{{product.price|currency:"EGP"}}</p>
+<div class="d-flex align-items-center">
+    <i  class="fa fa-star gold mb-3"></i>
+    <p>{{product.ratingsAverage}}</p>
+</div>
+</div>
+</a>
+<div class="d-flex align-items-center justify-content-center ">
+<button class="w-75 button btn  text-white" (click)="addproduct(product._id)"> + Add</button>
+<a class="ms-4"  href=""><i class="fa-solid fa-heart fs-4"></i></a>
+
+</div>
+    </div>

@@ -1,0 +1,31 @@
+<div class="w-75 mx-auto py-4">
+    <h4>login Now:</h4>
+     <div *ngIf="apierror.length>0" class="alert alert-danger">
+        {{apierror}}
+     </div>
+    <form [formGroup]="loginForm" (ngSubmit)="handlelogin(loginForm)">
+ 
+
+ <label for="email">email:</label>
+ <input type="email" class="form-control mb-2" id="email" formControlName="email">
+ <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert alert-danger" >
+    <p *ngIf="loginForm.get('email')?.getError('email')">email is not vaild</p>
+    <p *ngIf="loginForm.get('email')?.getError('required')">email is required</p>
+     </div>
+
+
+ <label for="password">password:</label>
+ <input type="password" class="form-control mb-2" id="password" formControlName="password">
+ <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="alert alert-danger" >
+    <p *ngIf="loginForm.get('password')?.getError('pattern')">password is not vaild</p>
+    <p *ngIf="loginForm.get('password')?.getError('required')">password  is required</p>
+     </div>
+
+
+
+ <button   type="submit" class=" btn btn-success text-white">
+    <span  >login</span>
+ </button>
+    </form>
+</div>
+

@@ -1,0 +1,53 @@
+<div class="d-flex justify-content-center pt-5">
+        <div class="w-50 row pt-5 ">
+            <div class="col-md-6">
+                <owl-carousel-o [options]="customOptions1">
+                    <ng-template carouselSlide><img height="500"  src="../../assets/images/61cSNgtEISL._AC_SY200_.jpg" alt=""></ng-template>  
+                    <ng-template carouselSlide><img height="500" src="../../assets/images/XCM_Manual_1396328_4379574_Egypt_EG_BAU_GW_DC_SL_Jewelry_379x304_1X._SY304_CB650636675_.jpg" alt=""></ng-template>  
+                  </owl-carousel-o>
+            </div>
+            <div class="col-md-6">
+                <div><img height="250" src="../../assets/images/XCM_Manual_1396328_4379575_Egypt_EG_BAU_GW_DC_SL_Bags_Wallets_379x304_1X._SY304_CB650636675_.jpg" alt=""></div>
+                <div><img height="250" src="../../assets/images/XCM_Manual_1533480_5305769_379x304_1X._SY304_CB616236518_.jpg" alt=""></div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 ">
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let category of categories">
+              <ng-template carouselSlide >
+                <img [src]="category.image" class="w-100 " height="250">
+                <h3 class="mt-3">{{category.name}}</h3>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+
+    </div>
+
+
+    <div class="row g-5 container m-auto">
+        <div class="col-md-3 whenhover rounded-2 py-3" *ngFor="let product of products">
+            <a href="" [routerLink]="['/productdetails',product._id]">
+
+
+            
+<img [src]="product.imageCover" alt="" class="w-100" >
+<h5 class="maincolor">{{product.category.name}}</h5>
+<p class=" fw-bold">{{product.title.split(' ').slice(0,2).join(' ')}}</p>
+<div class="d-flex justify-content-between">
+    <p>{{product.price|currency:"EGP"}}</p>
+    <div class="d-flex align-items-center">
+        <i  class="fa fa-star gold mb-3"></i>
+        <p>{{product.ratingsAverage}}</p>
+    </div>
+</div>
+</a>
+<div class="d-flex align-items-center justify-content-center ">
+    <button class="w-75 button btn  text-white" (click)="addproduct(product._id)"> + Add</button>
+    <a class="ms-4"  href=""><i class="fa-solid fa-heart fs-4"></i></a>
+    
+</div>
+        </div>
+    </div>

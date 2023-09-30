@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+.maincolor{
+    color:#4FA74F ;
+
+
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+.gold {
+    color: #daa520;
+}
+
+
+.whenhover:hover{
+    box-shadow:0px 0px 20px 1px rgba(79, 167, 79, 0.5)  ;
+}
+
+
+.whenhover:hover .button{
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all .5s;
+}
+
+.button {
+    background-color: #4fa74f;
+
+    transition: all .5s;
+    transform: translateY(300px);
+    opacity: 0;
+    border:none;
+}
+
+.button:hover{
+    background-color: #193b19
+
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.margin-top-fix{
+    margin-top: 100px;
+}

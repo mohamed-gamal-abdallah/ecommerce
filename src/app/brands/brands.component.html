@@ -1,0 +1,9 @@
+<div class="container text-center">
+    <h2 class="maincolor mt-5">All Brands</h2>
+    <div class="row mt-5 py-3">
+        <div class="col-md-3 whenhover rounded-2 py-3 text-center" *ngFor="let product of brands">   
+            <img [src]="product.image" alt="" class="w-100" height="200">
+            <h5 class="fw-bold mt-3">{{product.name}}</h5>
+            </div>
+    </div>
+</div>

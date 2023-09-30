@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-sm bg-light fixed-top ">
+      <div class="container ">
+        
+
+        
+        <div class="">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-cart-shopping nav-icon fs-2 maincolor"></i></a>
+            <a class="navbar-brand fs-3 fw-bold" href="#" >fresh cart</a>    
+        </div>
+
+        <div class=" collapse navbar-collapse " id="collapsibleNavId">
+            <ul *ngIf="islogin" class="navbar-nav mt-lg-0 d-flex align-items-center ms-auto">
+                <li  class="nav-item">
+                    <a class="nav-link" href="#" routerLink="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="cart">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">wishlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="products">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="Catrgories" >categories</a>
+                </li>
+                <li class="nav-item " >
+                    <a class="nav-link" href="#" routerLink="brands">brands</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse  " id="collapsibleNavId">
+            <ul class="navbar-nav  mt-lg-0  d-flex align-items-center ms-auto">
+                <li *ngIf="islogin" class="nav-item">
+                    <a class="nav-link p-3 position-relative" routerLink="cart">
+                        <i class="fas fa-cart-shopping text-main fa-lg"></i>
+                        <span class="badge bg-main text-white position-absolute top-0 end-0">{{cartNumber}}</span>
+
+                    </a>
+                </li>  
+                <li *ngIf="islogin" class="nav-item">
+                    <a class="nav-link" href="#" (click)="logout()">logout</a>
+                </li>
+                <li *ngIf="!islogin" class="nav-item">
+                    <a class="nav-link" href="#" routerLink="register">Register</a>
+                </li>
+                <li *ngIf="!islogin" class="nav-item">
+                    <a class="nav-link" href="#" routerLink="login">Login</a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+ 
+</nav>
+

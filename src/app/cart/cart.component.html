@@ -1,0 +1,31 @@
+<div class="container">
+
+<div class="p-4 my-4 bg-main-light">
+    <div class="d-flex justify-content-between">
+        <h3 class="maincolor">Shopcart</h3>
+        <h6 class="text-main h4">Total price : <span class="maincolor">{{cartdetails?.totalCartPrice|currency :"EGP"}} </span> </h6>
+    </div>
+    
+    <div *ngFor="let product of cartdetails?.products" class="row align-items-center border-bottom py-3 bg-light">
+        <div class="col-md-1 ">
+            <img [src]="product.product.imageCover " class="w-100" alt="">
+
+        </div>
+        <div class="col-md-11 d-flex justify-content-between">
+            <div>
+                <h6>{{product.product.title}}</h6>
+                <h6 class="maincolor">price : {{product.price|currency :"EGP"}}</h6>
+                <button class="btn m-0 p-0" (click)="removeitem(product.product.id)"><i class="fa-regular text-main fa-trash-can text-danger me-2"></i>Remove</button>
+            </div>
+            <div>
+                <button class="btn btn-outline-success border-main btn-sm" (click)="updateitemCount(product.product.id,product.count+1)">+</button>
+                <span class="mx-2" >{{product.count}} </span>
+                <button class="btn border-main btn-sm btn-outline-success" (click)="updateitemCount(product.product.id,product.count-1)">-</button>
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="btn btn-success text-white mt-4" routerLink="/checkout">Online Payment</div>
+</div>
+</div>
